@@ -1,4 +1,5 @@
 @charset "utf-8";
+@import "./commen/reset.css";
 
 * {
     margin: 0;
@@ -171,7 +172,7 @@ label[for=trigger] {
 label[for=trigger] span {
     position: absolute;
     height: 2px;
-    background-color: #3e3a39;
+    background-color: #999898;
     width: 100%;
     left: 0;
     transition: 0.3s
@@ -193,20 +194,25 @@ label[for=trigger] span:nth-child(3) {
 
 /* 메뉴 펼쳐보기 영역 */
 .allmenu {
-    background-color: #fff;
     width: 1300px;
-    height: 250px;
+    overflow: hidden;
     position: fixed;
-    top: 180px;
-    display: flex;
-    align-items: center;
-    transition: 0.3s
+    top: 185px;
+    margin: 0 auto;
+    transition: 0.3s;
+    display: none;
+}
+
+
+.allmenu ul:nth-of-type(2) {
+    margin-left: 10px;
 }
 
 .menuArchive {
+    background-color: #fff;
     font-size: 14px;
-    width: 45%;
-    height: 80%;
+    width: 49%;
+    height: 200px;
     margin: 0 auto;
     border: 1px solid #ebebeb;
     border-radius: 20px;
@@ -215,6 +221,8 @@ label[for=trigger] span:nth-child(3) {
     grid-template-rows: 1fr repeat(3, 1fr);
     align-items: center;
     cursor: pointer;
+    float: left;
+    padding-left: 6px;
 }
 
 .menuArchive li:nth-child(1) {
@@ -974,6 +982,14 @@ h2 {
         height: auto;
     }
 
+    .menuArchive {
+        padding-left: 0;
+    }
+
+    .allmenu {
+        width: 90%;
+    }
+
     .footer {
         width: 90%;
         margin: 0 auto;
@@ -1171,6 +1187,16 @@ h2 {
         margin-right: 10px;
         margin-left: 20px;
     }
+
+    .allmenu {
+        width: 100%;
+    }
+
+    .menuArchive {
+        width: 100%;
+        padding-left: 0;
+    }
+
 
     /* 컨텐츠1 메인배너 */
     .content1 {

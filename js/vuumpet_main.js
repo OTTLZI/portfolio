@@ -1,5 +1,6 @@
 'use strict';
 
+
 // 메인배너 이미지 슬라이드
 const mainBanner = document.querySelector('.mainBanner');
 
@@ -21,20 +22,15 @@ const itemsUlLi = itemsUl.querySelectorAll('li');
 
 const arrImg = [];
 for (let i = 0; i < galleryLi.length; i++) {
-    arrImg.push('url(img/gallery_' + i + '.jpg) no-repeat 50% /cover');
+    arrImg.push('url(../img/gallery_' + i + '.jpg) no-repeat 50% /cover');
     galleryLi[i].style.background = arrImg[i];
 }
-
-
-
 const galleryGoLeftFunc = key => {
     let gab = galleryLi[1].offsetLeft - galleryLi[0].offsetLeft;
     let goto = (-gab * key) + 'px';
     gallery.style.left = goto;
     gallery.style.transition = "all .5s"
 };
-
-
 const addOnClassFunc = key => {
     itemsUlLi.forEach((el, idx) => {
         if (key == idx) {
@@ -97,18 +93,3 @@ centerBtn.addEventListener('click', () => {
 });
 
 (() => autoGallery())();
-
-
-//메뉴바 설정
-const trigger = document.querySelector('#trigger');
-const allmenu = document.querySelector('.allmenu');
-
-jQuery(document).ready(function ($) {
-    
-    $(".allmenu").hide();
-    
-    $("#trigger").click(function () {
-        
-        $(".allmenu").slideToggle(400);
-    });
-});

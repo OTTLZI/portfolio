@@ -1,43 +1,51 @@
 'use strict';
 
-//포트폴리오 홈 화면 썸네일
+//=======포트폴리오 홈 화면 썸네일==========//
 $(function () {
-  var modalId;
+  var modalOpen;
   // 	이미지 클릭시 해당 이미지 모달
-  $(".thum_card").click(function () {
-    modalId = $(this).children().attr("id");
-    $("." + modalId).show();
-    console.log(modalId);
-
+  $(".modalBtn").click(function () {
+    modalOpen = $(this).children().attr("id");
+    $("." + modalOpen).show();
+    console.log(modalOpen);
 
     // 해당 이미지 가져오기
     var imgSrc = $(this).children(".pfThumnail").attr("src");
-    $(".modalBox .thumb").attr("src", imgSrc);
-
-
-
-
-    // 해당 이미지 텍스트 가져오기
-    var imgTit = $(this).children(".thum_txt").html();
-    $(".modalBox p").html(imgTit);
+    $(".modalContent").attr("src", imgSrc);
   });
 
-
-
   //.modal안에 button을 클릭하면 .modal닫기
-  $(".modal button").click(function () {
-    $("." + modalId).hide();
+  $(".btn-close").click(function () {
+    $("." + modalOpen).hide();
   });
 
   //.modal밖에 클릭시 닫힘
   $(".modal").click(function (e) {
-    console.log(e.target.className);
-
-    console.log("modahjkhkj")
-    if (e.target.className != `modal ${modalId}`) {
+    if (e.target.className != `modal ${modalOpen}`) {
       // return false;
     } else {
-      $("." + modalId).hide();
+      $("." + modalOpen).hide();
     }
   });
+
+  //메뉴 버튼 클릭시 사이드바+오버레이 보이기
+  $('#trigger').on('click', function () {
+    $('.sidebar').toggleClass('active');
+    if ($('.sidebar').hasClass('active')) {
+      $('.overlay').fadeIn(1000);
+    } else {
+      $('.overlay').fadeOut(1000);
+    }
+  });
+  //배경(오버레이 부분)클릭시 사이드바 숨기기
+  $('.overlay').on('click', function () {
+    $('.sidebar').toggleClass('active');
+    if ($('.sidebar').hasClass('active')) {
+      $('.overlay').fadeIn(1000);
+    } else {
+      $('.overlay').fadeOut(1000);
+      $("input:checkbox[id='trigger']").prop("checked", false);
+    }
+  });
+  
 });

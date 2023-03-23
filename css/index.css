@@ -297,6 +297,9 @@ address {
 }
 
 /*------모달창 안, 이미지 크기 조정 ------*/
+#modalContent-1-1{
+  max-width: 100%;
+}
 #modalContent-1-2,
 #modalContent-1-3,
 #modalContent-1-4 {

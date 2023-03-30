@@ -31,7 +31,7 @@ header {
   background-color: #fff;
 }
 
-#pinned_top {
+.pinned_top {
   width: 100%;
   height: 250px;
   display: grid;
@@ -113,8 +113,9 @@ address {
   margin-top: 50px;
 }
 
-/*===============미디어쿼리 tablet========================*/
-@media screen and (max-width: 1023px) {
+/* 미디어쿼리1*/
+/*테블릿 가로, 테블릿 세로 (해상도 768px ~ 1239px)*/
+@media all and (min-width:768px) and (max-width:1239px) {
   .container>img {
     padding-top: 50px;
     padding-left: 50px;
@@ -136,9 +137,15 @@ address {
 }
 
 }
-
-/*===============미디어쿼리 mobile========================*/
-@media screen and (max-width: 767px) {
+/* 미디어쿼리2// 모바일 가로, 모바일 세로 (해상도 480px ~ 767px)*/
+@media all and (min-width:480px) and (max-width:767px) {
+  .pinned_top{
+    height: 150px;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  .container{
+    top: 150px;
+  }
   .container {
     display: block;
   }

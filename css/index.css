@@ -437,6 +437,14 @@ address {
 
 /* 미디어쿼리2// 모바일 가로, 모바일 세로 (해상도 480px ~ 767px)*/
 @media all and (min-width:480px) and (max-width:767px) {
+  /* about페이지도 같은 css적용 */
+  .pinned_top{
+    height: 150px;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  .container{
+    top: 150px;
+  }
   .top_item {
     padding: 30px;
   }
@@ -465,7 +473,6 @@ address {
     height: 150px;
   }
 
-
   .gnb {
     font-size: 12px;
     line-height: 60px;
@@ -473,7 +480,7 @@ address {
   }
 
   footer {
-    margin-top: 400px;
+    margin-top: 300px;
   }
 
   .btn-close {

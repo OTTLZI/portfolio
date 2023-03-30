@@ -101,7 +101,7 @@ header.active .pinned_top {
 .gnb {
   font-size: 14px;
   max-width: 100%;
-  line-height: 30px;
+  line-height: 40px;
   transition: all 0.3s;
   cursor: pointer;
   background-color: #fff;
@@ -416,6 +416,9 @@ address {
     font-size: 12px;
     line-height: 60px;
     margin-left: 30px;
+  }
+  .sub>li>a{
+    font-size: 11px;
   }
 
   footer {

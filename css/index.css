@@ -86,7 +86,10 @@ header.active .pinned_top {
   position: relative;
   top: 300px;
 }
-
+/* 좌측 메뉴바 트리거 */
+input[id=trigger] {
+  opacity: 0;
+}
 /* 좌측메뉴 */
 #side_nav {
   width: 100%;
@@ -464,9 +467,8 @@ address {
     /* 네비를 띄울 컨텐츠 길이만큼 height값 조정 */
     height: 400px;
     position: fixed;
-    top: 150px;
+    top: 120px;
     left: 0;
-    background-color: alicebluel;
     z-index: 88;
   }
 
@@ -483,7 +485,7 @@ address {
   }
 
   #right_content {
-    top: 150px;
+    top: 200px;
   }
 
   .pfThumnail {
@@ -495,7 +497,6 @@ address {
     font-size: 12px;
     line-height: 60px;
     margin-left: 30px;
-    background-color: rgb(230, 219, 219);
   }
 
   footer {
@@ -514,6 +515,91 @@ address {
 
   .sub>li>a::before {
     display: none;
+  }
+
+  /* 추가된 네비 디자인 */
+
+  input[id=trigger] {
+    opacity: 0;
+  }
+
+  label[for=trigger] {
+    width: 30px;
+    height: 20px;
+    display: block;
+    position: absolute;
+    top: 50px;
+    left: 30px;
+    cursor: pointer;
+    transition: 0.3s;
+    z-index: 98;
+  }
+
+  label[for=trigger] span {
+    display: block;
+    height: 2px;
+    background-color: rgba(128, 128, 128);
+    position: absolute;
+    width: 100%;
+    transition: 0.3s;
+    z-index: 1000;
+  }
+
+  label[for=trigger] span:nth-child(1) {
+    top: 0;
+  }
+
+  label[for=trigger] span:nth-child(2) {
+    top: 50%;
+  }
+
+  label[for=trigger] span:nth-child(3) {
+    top: 100%;
+  }
+
+  input[id=trigger]:checked+label span:nth-child(1) {
+    top: 50%;
+    transform: rotate(45deg);
+  }
+
+  input[id=trigger]:checked+label span:nth-child(2) {
+    opacity: 0;
+  }
+
+  input[id=trigger]:checked+label span:nth-child(3) {
+    top: 50%;
+    transform: rotate(-45deg);
+  }
+
+  input[id="trigger"]:checked+label {
+    left: 380px;
+  }
+
+  .sidebar {
+    min-width: 350px;
+    max-width: 70%;
+    height: 100vh;
+    background-color: rgb(230, 230, 230);
+    top: 100px;
+    left: -350px;
+    transition: 0.5s;
+    z-index: 96;
+    position: fixed;
+    cursor: pointer;
+    visibility: hidden;
+    font-size: 14px;
+    cursor: pointer;
+    padding: 100px 0 0 50px;
+    line-height: 30px;
+  }
+
+  .sidebar.active {
+    visibility: visible;
+    left: 0;
+  }
+
+  .sidebar>li:hover .sub {
+    display: block;
   }
 
 }

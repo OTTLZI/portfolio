@@ -112,11 +112,14 @@ input[id=trigger] {
   margin-left: 50px;
   word-break: keep-all;
 }
-
+/* 왼쪽 네비게이션 큰 */
 .gnb>ul>li>a {
   color: #888;
+  transition: 0.5s;
 }
-
+.gnb:hover>ul>li>a{
+  opacity: 0.4;
+}
 .gnb>ul>li:hover .sub {
   display: block;
 }
@@ -124,7 +127,7 @@ input[id=trigger] {
 .sub {
   display: none;
 }
-
+/* 왼쪽 네비게이션 작은 글씨 */
 .sub>li>a {
   display: block;
   font-size: 13px;

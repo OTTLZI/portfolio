@@ -81,23 +81,7 @@ header.active .pinned_top {
   color: #555;
   font-weight: 500;
 }
-
-/* #sidebar {
-  width: 250px;
-  position: fixed;
-  top: 0;
-  left: -250px;
-  height: 100%;
-  z-index: 999;
-  background: #333;
-  color: #fff;
-  transition: all 0.3s;
-}
-
-#sidebar.active {
-  left: 0;
-} */
-
+/* 사이드바  */
 .overlay {
   position: fixed;
   top: 0;

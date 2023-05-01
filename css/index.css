@@ -41,38 +41,22 @@ a {
 /* 헤더 */
 header {
   width: 100%;
-  background-color: #fff;
   z-index: 99;
   position: fixed;
-  height: auto;
-}
-
-.pinned_top {
-  width: 100%;
-  margin: 0 auto;
+  top: 0;
   height: 300px;
-  display: grid;
-  grid-template-columns: 2fr 1fr 1fr;
-  background-color: #fff;
-  transition: 0.5s;
   border-bottom: 1px solid rgba(128, 128, 128, 0.3);
+  display: flex;
+  justify-content: space-between;
+  padding: 0px 50px;
 }
 
-/* header active class */
-header.active .pinned_top {
-  height: 150px;
-  border-bottom: 1px solid rgba(128, 128, 128, 0.3);
+header .header_item {
+  margin-top: 50px;
 }
 
-.top_item {
-  padding: 50px;
-}
-
-.pinned_txt {
+header .header_text {
   text-align: left;
-}
-
-.pinned_txt h1 {
   font-size: 14px;
   color: #555;
   font-weight: 500;
@@ -86,10 +70,12 @@ header.active .pinned_top {
   position: relative;
   top: 300px;
 }
+
 /* 좌측 메뉴바 트리거 */
 input[id=trigger] {
   opacity: 0;
 }
+
 /* 좌측메뉴 */
 #side_nav {
   width: 100%;
@@ -112,14 +98,17 @@ input[id=trigger] {
   margin-left: 50px;
   word-break: keep-all;
 }
+
 /* 왼쪽 네비게이션 큰 */
 .gnb>ul>li>a {
   color: #888;
   transition: 0.5s;
 }
-.gnb:hover>ul>li>a{
+
+.gnb:hover>ul>li>a {
   opacity: 0.4;
 }
+
 .gnb>ul>li:hover .sub {
   display: block;
 }
@@ -127,6 +116,7 @@ input[id=trigger] {
 .sub {
   display: none;
 }
+
 /* 왼쪽 네비게이션 작은 글씨 */
 .sub>li>a {
   display: block;
@@ -389,9 +379,6 @@ address {
 /* 미디어쿼리1*/
 /*테블릿 가로, 테블릿 세로 (해상도 768px ~ 1239px)*/
 @media all and (min-width:768px) and (max-width:1239px) {
-  .pinned_top {
-    height: 150px;
-  }
 
   .container {
     top: 150px;
@@ -453,8 +440,9 @@ address {
 /* 미디어쿼리2// 모바일 가로, 모바일 세로 (해상도 480px ~ 767px)*/
 /* @media all and (min-width:480px) and (max-width:767px)  */
 @media all and (max-width:767px) {
-  header{
+  header {
     width: 100%;
+    height: 150px;
   }
 
   /* about페이지도 같은 css적용 */
@@ -465,7 +453,7 @@ address {
 
   .top_item {
     padding: 30px;
-    
+
   }
 
   /* 좌측메뉴 */
@@ -506,9 +494,11 @@ address {
     line-height: 60px;
     margin-left: 30px;
   }
-.thum_txt{
-  display: none;
-}
+
+  .thum_txt {
+    display: none;
+  }
+
   footer {
     margin-top: 300px;
   }
@@ -520,8 +510,15 @@ address {
     color: rgb(190, 190, 190);
   }
 
+  /* 모달 내부  */
+
   .modalContent {
     width: 100%;
+    padding: 20px 20px;
+  }
+
+  #contentTxt {
+    margin: 30px 0 20px 0px;
   }
 
   .sub>li>a::before {
@@ -612,10 +609,5 @@ address {
   .sidebar>li:hover .sub {
     display: block;
   }
-  /* 모달 내부  */
-  
-.modalContent {
-  padding: 20px 20px;
-}
 
 }

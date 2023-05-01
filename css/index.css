@@ -221,25 +221,17 @@ input[id=trigger] {
 
 /* footer영역 */
 footer {
-  width: 100%;
-  height: 100px;
-  position: absolute;
-  bottom: 0;
-}
-
-#footerBox {
   width: 95%;
   border-top: 1px solid rgba(128, 128, 128, 0.3);
   margin: 0 auto;
   font-size: 12px;
   text-align: center;
+  padding: 50px;
 }
 
 address {
   font-style: normal;
-  margin-top: 50px;
 }
-
 
 
 /*----thumModal 모달 내부 css ----*/
@@ -377,23 +369,13 @@ address {
   margin-bottom: 50px;
 }
 
-미디어쿼리2// 모바일 가로, 모바일 세로 (해상도 480px ~ 767px)
+미디어쿼리2 // 모바일 가로, 모바일 세로 (해상도 480px ~ 767px)
+
 /* @media all and (min-width:480px) and (max-width:767px)  */
 @media all and (max-width:767px) {
   header {
     width: 100%;
     height: 150px;
-  }
-
-  /* about페이지도 같은 css적용 */
-  .pinned_top {
-    height: 150px;
-    grid-template-columns: 1fr 1fr 1fr;
-  }
-
-  .top_item {
-    padding: 30px;
-
   }
 
   /* 좌측메뉴 */

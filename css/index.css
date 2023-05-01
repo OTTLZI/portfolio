@@ -63,30 +63,19 @@ header .header_text {
   font-weight: 500;
 }
 
+
 /*메인섹션*/
 .container {
   width: 100%;
   height: auto;
-  margin: 0 auto;
+  margin-top: 300px;
   position: relative;
-  top: 300px;
-}
-
-/* 좌측 메뉴바 트리거 */
-input[id=trigger] {
-  opacity: 0;
+  display: flex;
 }
 
 /* 좌측메뉴 */
 #side_nav {
-  width: 100%;
-  max-width: 400px;
-  /* 네비를 띄울 컨텐츠 길이만큼 height값 조정 */
-  height: 500px;
-  padding-top: 20px;
-  position: fixed;
-  top: 300px;
-  left: 0;
+  min-width: 350px;
 }
 
 .gnb {
@@ -129,7 +118,7 @@ input[id=trigger] {
 }
 
 .sub>li>a::before {
-  content: '\f105';
+  content: "\f105";
   font-family: "Font Awesome 5 Free";
   font-weight: 900;
   display: inline-block;
@@ -149,48 +138,36 @@ input[id=trigger] {
 /* ======오른쪽섹션========= */
 
 #right_content {
-  width: 100%;
-  max-width: 1520px;
-  overflow: hidden;
-  position: fixed;
-  right: 0;
-}
-
-.thumBtn {
-  width: 100%;
-  height: 500px;
+  flex-grow: 1;
   display: flex;
   flex-flow: row wrap;
-  justify-content: space-between;
-  list-style: none;
-  padding-right: 50px;
+  justify-content: center;
 }
 
-.thumBtn>li {
-  margin: 20px 0px 0px 0px;
-  width: 100%;
-  max-width: 350px;
-  max-height: 250px;
+#right_content>li {
   position: relative;
   transition: 0.5s;
-  text-align: center;
   cursor: pointer;
+  width: 350px;
+  height: 250px;
+  margin: 10px;
+  overflow: hidden;
 }
 
-.thumBtn>li:hover .thum_txt {
-  top: 0;
-}
-
-.thumBtn li:hover,
-.thumBtn li.active {
+#right_content li:hover {
   transform: translateY(-15px);
   box-shadow: 0px 5px rgba(209, 209, 209, 0.26);
   box-sizing: border-box;
 }
 
+#right_content>li:hover .thum_txt {
+  top: 0;
+  text-align: center;
+}
+
 .pfThumnail {
-  width: 350px;
-  height: 250px;
+  width: 100%;
+  height: 100%;
   object-fit: cover;
 }
 
@@ -208,10 +185,6 @@ input[id=trigger] {
   box-sizing: border-box;
   transition: 0.5s;
   font-size: 14px;
-}
-
-.thum_card:hover .mainTitle {
-  top: 0;
 }
 
 .thum_txt p {
@@ -369,60 +342,17 @@ address {
   margin-bottom: 50px;
 }
 
-미디어쿼리2 // 모바일 가로, 모바일 세로 (해상도 480px ~ 767px)
-
-/* @media all and (min-width:480px) and (max-width:767px)  */
-@media all and (max-width:767px) {
+/* 
+* 모바일 사이즈 스타일 
+*/
+@media all and (max-width: 767px) {
   header {
-    width: 100%;
     height: 150px;
   }
 
-  /* 좌측메뉴 */
-  #side_nav {
-    width: 100%;
-    max-width: 200px;
-    /* 네비를 띄울 컨텐츠 길이만큼 height값 조정 */
-    height: 200px;
-    position: fixed;
-    top: 120px;
-    left: 0;
-    z-index: 88;
-  }
-
-  .thumBtn {
-    margin-right: 30px;
-    overflow: scroll;
-    justify-content: space-evenly;
-    padding-right: 0px;
-  }
-
-  .thumBtn>li {
-    max-width: 200px;
-    max-height: 150px;
-  }
-
-  #right_content {
-    top: 200px;
-  }
-
-  .pfThumnail {
-    width: 200px;
-    height: 150px;
-  }
-
-  .gnb {
-    font-size: 12px;
-    line-height: 60px;
-    margin-left: 30px;
-  }
-
-  .thum_txt {
-    display: none;
-  }
-
-  footer {
-    margin-top: 300px;
+  .container {
+    flex-direction: column;
+    margin-top: 150px;
   }
 
   .btn-close {
@@ -432,104 +362,17 @@ address {
     color: rgb(190, 190, 190);
   }
 
-  /* 모달 내부  */
-
   .modalContent {
     width: 100%;
-    padding: 20px 20px;
-  }
-
-  #contentTxt {
-    margin: 30px 0 20px 0px;
   }
 
   .sub>li>a::before {
     display: none;
   }
 
-  /* 추가된 네비 디자인 */
+  /* 모달 내부  */
 
-  input[id=trigger] {
-    opacity: 0;
+  .modalContent {
+    padding: 20px 20px;
   }
-
-  label[for=trigger] {
-    width: 30px;
-    height: 20px;
-    display: block;
-    position: absolute;
-    top: 50px;
-    left: 30px;
-    cursor: pointer;
-    transition: 0.3s;
-    z-index: 98;
-  }
-
-  label[for=trigger] span {
-    display: block;
-    height: 2px;
-    background-color: rgba(128, 128, 128);
-    position: absolute;
-    width: 100%;
-    transition: 0.3s;
-    z-index: 1000;
-  }
-
-  label[for=trigger] span:nth-child(1) {
-    top: 0;
-  }
-
-  label[for=trigger] span:nth-child(2) {
-    top: 50%;
-  }
-
-  label[for=trigger] span:nth-child(3) {
-    top: 100%;
-  }
-
-  input[id=trigger]:checked+label span:nth-child(1) {
-    top: 50%;
-    transform: rotate(45deg);
-  }
-
-  input[id=trigger]:checked+label span:nth-child(2) {
-    opacity: 0;
-  }
-
-  input[id=trigger]:checked+label span:nth-child(3) {
-    top: 50%;
-    transform: rotate(-45deg);
-  }
-
-  input[id="trigger"]:checked+label {
-    left: 335px;
-  }
-
-  .sidebar {
-    min-width: 300px;
-    max-width: 70%;
-    height: 100vh;
-    background-color: rgb(230, 230, 230);
-    top: 100px;
-    left: -300px;
-    transition: 0.5s;
-    z-index: 96;
-    position: fixed;
-    cursor: pointer;
-    visibility: hidden;
-    font-size: 14px;
-    cursor: pointer;
-    padding: 100px 0 0 50px;
-    line-height: 30px;
-  }
-
-  .sidebar.active {
-    visibility: visible;
-    left: 0;
-  }
-
-  .sidebar>li:hover .sub {
-    display: block;
-  }
-
 }

@@ -471,9 +471,9 @@ address {
   /* 좌측메뉴 */
   #side_nav {
     width: 100%;
-    max-width: 400px;
+    max-width: 200px;
     /* 네비를 띄울 컨텐츠 길이만큼 height값 조정 */
-    height: 400px;
+    height: 200px;
     position: fixed;
     top: 120px;
     left: 0;

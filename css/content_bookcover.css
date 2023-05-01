@@ -377,7 +377,7 @@ address {
 
 
 /* 미디어쿼리-2_모바일 가로, 모바일 세로 (해상도 480px ~ 767px)*/
-@media all and (min-width:480px) and (max-width:767px) {
+@media all and (max-width:767px) {
   input[id="trigger"]:checked+label {
     left: 310px;
   }
@@ -417,12 +417,14 @@ address {
   }
 
   .container {
-    display: flex;
-    flex-wrap: wrap-reverse;
+    flex-direction: column-reverse;
     margin: 0 auto;
     padding-top: 0px;
   }
-
+  #contentTxt{
+    width: 100%;
+    width: 100%;
+  }
   #slider-wrp {
     width: 100%;
     margin: 20px 0 50px 0;

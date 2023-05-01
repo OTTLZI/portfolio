@@ -146,7 +146,7 @@ input[id=trigger]:checked+label span:nth-child(3) {
 }
 
 input[id="trigger"]:checked+label {
-  left: 380px;
+  left: 360px;
 }
 
 .sidebar {
@@ -222,6 +222,7 @@ input[id="trigger"]:checked+label {
   position: relative;
   top: 150px;
   display: flex;
+  flex-direction: row;
   padding-top: 30px;
 }
 
@@ -235,7 +236,7 @@ input[id="trigger"]:checked+label {
   gap: 10px;
 }
 
-#mainTitle{
+#mainTitle {
   font-size: 20px;
   color: #444;
   font-weight: 600;
@@ -370,8 +371,8 @@ address {
   #subTitle {
     text-align: left;
   }
-  
-  
+
+
 }
 
 
@@ -421,13 +422,14 @@ address {
     margin: 0 auto;
     padding-top: 0px;
   }
-  #contentTxt{
-    width: 100%;
+
+  #contentTxt {
     width: 100%;
   }
+
   #slider-wrp {
     width: 100%;
-    margin: 20px 0 50px 0;
+    /* margin: 20px 0 50px 0; */
   }
 
   .slider-for {
@@ -451,5 +453,9 @@ address {
 
   .slide-btn {
     height: auto;
+  }
+
+  input[id="trigger"]:checked+label {
+    left: 350px;
   }
 }

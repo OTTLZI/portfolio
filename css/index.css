@@ -515,8 +515,9 @@ address {
 
   .btn-close {
     z-index: 99;
-    top: 3rem;
-    right: 3rem;
+    top: 2rem;
+    right: 2rem;
+    color: rgb(190, 190, 190);
   }
 
   .modalContent {
@@ -611,5 +612,10 @@ address {
   .sidebar>li:hover .sub {
     display: block;
   }
+  /* 모달 내부  */
+  
+.modalContent {
+  padding: 20px 20px;
+}
 
 }

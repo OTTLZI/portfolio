@@ -6,8 +6,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>IMYUNJI PORTFOLIO</title>
-  <!-- jQuery CDN -->
-  <script src="../js/jquery-1.12.4.js"></script>
   <!-- 폰트어썸CDN-->
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
     integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
@@ -15,10 +13,9 @@
   <link rel="stylesheet" href="../css/content_watch.css">
   <style>
   </style>
-  <!-- slick.js -->
+  <!-- slick.css -->
   <link rel="stylesheet" href="../slick/slick.css">
   <link rel="stylesheet" href="../slick/slick-theme.css">
-  <script src="../slick/slick.js"></script>
 </head>
 
 <body>
@@ -38,6 +35,7 @@
               <a href="#">Web publishing</a>
               <ul class="sub">
                 <li><a href="../vuumpet/vuumpet_main.html" target="_blank">Redesign model – voompet_web page</a></li>
+                <li><a href="./livingshop.html" target="_blank">living shop_web page</a></li>
               </ul>
             </li>
             <li>
@@ -78,13 +76,6 @@
       </div>
     </header>
     <section class="container">
-      <div id="contentTxt">
-        <p id="mainTitle">Brochure Design_Van Gogh Exhibition</p>
-        <p id="subTitle">Graphic Design<sup>2018</sup></p>
-        <p id="contentInfo">
-          Vincent van Gogh의 전시회 전반에 관한 컨셉트를 구상하고 티켓,브로슈어,<br>포스터 등을 제작한 그래픽 디자인 작업물
-        </p>
-      </div>
       <div id="slider-wrp">
         <div class="slider-for">
           <div class="slide-container"><img src="../img/modalContent-2-1.jpg" alt="고흐1"></div>
@@ -99,20 +90,28 @@
           <div class="slide-btn"><img src="../img/modalContent-2-3.jpg" alt="고흐3썸네일"></div>
           <div class="slide-btn"><img src="../img/modalContent-2-4.jpg" alt="고흐4썸네일"></div>
           <div class="slide-btn"><img src="../img/vangogh.PNG" alt="고흐5썸네일"></div>
-
-
         </div>
       </div>
-    </section>
-    <footer>
-      <div id="footerBox">
-        <address>
-          본 페이지는 상업적 목적이 아닌 개인 포트폴리오용으로 제작되었습니다.<br>
-          © 2022 IM, Yun-Ji. All Rights Reserved.
-        </address>
+      <div id="contentTxt">
+        <p id="mainTitle">Brochure Design_Van Gogh Exhibition</p>
+        <p id="subTitle">Graphic Design<sup>2018</sup></p>
+        <p id="contentInfo">
+          Vincent van Gogh의 전시회 전반에 관한 컨셉트를 구상하고 티켓,브로슈어,<br>포스터 등을 제작한 그래픽 디자인 작업물
+        </p>
       </div>
+    </section>
+    <!— Footer —>
+    <footer>
+      <address>
+        본 페이지는 상업적 목적이 아닌 개인 포트폴리오용으로 제작되었습니다.<br>
+        © 2022 IM, Yun-Ji. All Rights Reserved.
+      </address>
     </footer>
   </div>
+  <!-- jQuery CDN -->
+  <script src="../js/jquery-1.12.4.js"></script>
+  <!-- slick.js -->
+  <script src="../slick/slick.js"></script>
   <script src="../js/custom.js"></script>
   <script>
     $('.slider-for').slick({

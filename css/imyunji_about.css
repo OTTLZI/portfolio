@@ -26,28 +26,23 @@ a {
 /* 헤더 */
 header {
   width: 100%;
-  overflow: hidden;
-  margin: 0 auto;
+  z-index: 99;
+  position: fixed;
+  top: 0;
+  height: 300px;
+  border-bottom: 1px solid rgba(128, 128, 128, 0.3);
+  display: flex;
+  justify-content: space-between;
+  padding: 0px 50px;
   background-color: #fff;
 }
 
-.pinned_top {
-  width: 100%;
-  height: 250px;
-  display: grid;
-  grid-template-columns: 2fr 1fr 1fr;
-
+header .header_item {
+  margin-top: 50px;
 }
 
-.top_item {
-  padding: 50px;
-}
-
-.txt_left {
+header .header_text {
   text-align: left;
-}
-
-h1 {
   font-size: 14px;
   color: #555;
   font-weight: 500;
@@ -55,24 +50,26 @@ h1 {
 
 .container {
   width: 100%;
-  overflow: hidden;
+  padding: 350px 50px 100px 50px;
+  height: auto;
   background-color: #fff;
   border-top: 1px solid rgba(128, 128, 128, 0.336);
   margin: 0 auto;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  position: relative;
+  display: flex;
+  flex-flow: row wrap;
 }
 
 .container>img {
-  padding-top: 50px;
-  padding-left: 50px;  
   width: 500px;
+  height: 400px;
+  object-fit: cover;
   box-sizing: border-box;
+
 }
 
 .right_section {
-  padding-left: 50px;
-  padding-top: 50px;
+  padding-left: 380px;
   overflow: hidden;
   display: grid;
   row-gap: 60px;
@@ -92,68 +89,47 @@ h1 {
   font-weight: 600;
 }
 
+
 /* footer영역 */
 footer {
-  width: 100%;
-  height: 100px;
-  position: relative;
-  margin-top: 300px;
-}
-
-#footerBox {
   width: 95%;
   border-top: 1px solid rgba(128, 128, 128, 0.3);
   margin: 0 auto;
   font-size: 12px;
   text-align: center;
+  padding: 50px;
 }
 
 address {
   font-style: normal;
-  margin-top: 50px;
 }
 
-/* 미디어쿼리1*/
-/*테블릿 가로, 테블릿 세로 (해상도 768px ~ 1239px)*/
-@media all and (min-width:768px) and (max-width:1239px) {
-  .container>img {
-    padding-top: 50px;
-    padding-left: 50px;
-  }
-  footer{
-    margin-top: 100px;
-  }
-  
-.about_txt {
-  font-size: 14px;
-  color: rgb(100, 100, 100);
-}
 
-.about_txt>p {
-  padding-bottom: 5px;
-  font-size: 14px;
-  color: rgb(190, 190, 190);
-  font-weight: 600;
-}
 
-}
-/* 미디어쿼리2// 모바일 가로, 모바일 세로 (해상도 480px ~ 767px)*/
-@media all and (min-width:480px) and (max-width:767px) {
-  .pinned_top{
+/* 
+* 모바일 사이즈 스타일 
+*/
+@media all and (max-width: 767px) {
+
+  header {
     height: 150px;
     grid-template-columns: 1fr 1fr 1fr;
   }
-  .container{
-    top: 150px;
-  }
+
   .container {
-    display: block;
+    padding: 0;
   }
+
   .container>img {
-    padding-top: 50px;
-    padding-left: 50px;
+    width: 350px;
+    padding-top: 170px;
+    margin: 0 auto;
   }
-  footer{
-    margin-top: 100px;
+
+  .right_section {
+    padding-left: 30px;
+    padding-top: 30px;
+    overflow: hidden;
+    row-gap: 60px;
   }
 }
